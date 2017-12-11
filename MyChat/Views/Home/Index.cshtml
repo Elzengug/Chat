@@ -1,0 +1,21 @@
+﻿
+@model MyChat.Models.ViewModels.MessageViewModel
+@{
+    ViewBag.Title = "Home Page";
+}
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+<form method="post">
+    <br /><textarea type="text" name="Text" cols="80" rows="5"></textarea>
+    <input type="submit" value="Send" />
+</form>
+@foreach (var mes in Model.ChatMessage)
+{
+    <div style="font-size: larger">@mes.Text</div>
+    <div style="font-size: smaller">@mes.ApplicationUser.Sign</div>
+}
+</body>
+</html>
